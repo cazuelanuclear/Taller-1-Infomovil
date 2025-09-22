@@ -3,7 +3,6 @@ const dataContainer = document.getElementById("dataContainer")
 async function fetchData() {
     const res = await fetch("https://api.thedogapi.com/v1/breeds");
     const data = await res.json();
-    dataContainer.innerHTML = '<h1>Razas de los perritos:</h2>';
 
     data.forEach(dog => {
         dataContainer.innerHTML +=`

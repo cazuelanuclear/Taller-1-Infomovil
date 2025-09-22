@@ -1,16 +1,30 @@
 const dataContainer = document.getElementById("dataContainer")
 
 async function fetchData() {
-    const res = await fetch("https://catfact.ninja/facts?limit=1&max_length=140");
-    const data = await res.json();
-    dataContainer.innerHTML = '<h1>Curiosidades de los gatitos:</h2>';
+    var res = await fetch("https://catfact.ninja/facts");
+    var data = await res.json();
 
-    data.forEach(cat => {
+    data.data.forEach(cat => {
         dataContainer.innerHTML +=`
             <div class="p-4 border border-gray-200 bg-blue-50">
-
+                <h3 class="text-xl font-bold">Fact:</h3>
+                <p><strong>ID:</strong> ${cat.fact}</p>
             </div>`;
     });
+
+
+    res = await fetch("https://catfact.ninja/facts?page=2");
+    data = await res.json();
+
+    data.data.forEach(cat => {
+        dataContainer.innerHTML +=`
+            <div class="p-4 border border-gray-200 bg-blue-50">
+                <h3 class="text-xl font-bold">Fact:</h3>
+                <p><strong>ID:</strong> ${cat.fact}</p>
+            </div>`;
+    });
+
+
 }
 
 fetchData();
