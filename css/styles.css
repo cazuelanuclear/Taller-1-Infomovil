@@ -5,20 +5,17 @@
   padding: 20px;
   gap: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: start;
   align-items: center;
-  
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {  
+@media (min-width: 768px) and (max-width: 1280px) {  
   .grid {
     background-color: lightblue;
     grid-template-columns: 1fr 1fr;
   }
 }
-
-
 
 @media (max-width: 768px) {
   .grid {

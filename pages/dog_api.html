@@ -9,6 +9,16 @@
 
     <body> 
         <h2>Información de razas de perritos</h2>
+        <div class="flex flex-wrap gap-4 mb-4">
+        <input type="text" id="search" placeholder="Buscar raza..." class="p-2 border rounded">
+        <select id="sort" class="p-2 border rounded">
+            <option value="">Ordenar</option>
+            <option value="name-asc">Nombre A-Z</option>
+            <option value="name-desc">Nombre Z-A</option>
+            <option value="weight-asc">Peso ↑</option>
+            <option value="weight-desc">Peso ↓</option>
+        </select>
+        </div>
         <div id="dataContainer"></div>
         <script src = "../js/apiDog.js" ></script>
 
