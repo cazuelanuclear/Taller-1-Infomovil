@@ -1,23 +1,38 @@
-<!DOCTYPE html>
-<html lang = "es"> 
-    <head>
-        <title> Información de gatitos </title>
-        <meta charset="UTF-8">
-        <link href="../css/apis.css" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
 
-    <body> 
-        <h2 class="px-4 mb-3">¿Sabías esto de los gatitos?</h2>
-        <div class="flex flex-wrap gap-4 mb-4 px-4">
-        <select id="sort" class="p-2 border rounded">
-            <option value="all">Mostrar todo</option>
-            <option value="10">Mostrar 10</option>
-            <option value="100">Mostrar 100</option>
-        </select>
-        <button id='randomBtn' class="p-2 bg-gray-100 text-gray-800 rounded border border-gray-300 hover:bg-gray-200 transition-colors duration-200">Quiero un dato aleatorio</button>
-        </div>
-        <div id="dataContainer"></div>
-        <script src = "../js/apiCat.js" ></script>
-    </body>
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+  <meta charset="UTF-8">
+  <title>Información de gatitos</title>
+  <link href="../css/apis.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-6 px-3">
+  <!-- Título -->
+  <h2 class="text-xl sm:text-2xl font-bold text-gray-800 text-center mb-6">
+    🐱 ¿Sabías esto de los gatitos?
+  </h2>
+
+  <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-6 w-full sm:w-auto justify-center">
+    <button id="paginaAnterior" 
+      class="w-full sm:w-auto px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition hidden">
+      ⬅️ Anterior
+    </button>
+
+    <div id="paginaActual" 
+      class="w-full sm:w-auto text-center px-4 py-2 bg-white border rounded-lg shadow text-gray-800 font-semibold">
+      1
+    </div>
+
+    <button id="paginaSiguiente" 
+      class="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+      Siguiente ➡️
+    </button>
+  </div>
+
+  <div id="dataContainer" class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-2 sm:px-4"></div>
+
+  <script src="../js/apiCat.js"></script>
+</body>
 </html>

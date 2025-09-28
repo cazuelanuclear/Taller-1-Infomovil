@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang = "es"> 
-    <head>
-        <title> Información de perritos </title>
-        <meta charset="UTF-8">
-        <link href="../css/apis.css" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de perritos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
-    <body> 
-        <h2>Información de razas de perritos</h2>
-        <div class="flex flex-wrap gap-4 mb-4">
-        <input type="text" id="search" placeholder="Buscar raza..." class="p-2 border rounded">
-        <select id="sort" class="p-2 border rounded">
-            <option value="">Ordenar</option>
-            <option value="name-asc">Nombre A-Z</option>
-            <option value="name-desc">Nombre Z-A</option>
-            <option value="weight-asc">Peso ↑</option>
-            <option value="weight-desc">Peso ↓</option>
-        </select>
+    <header class="bg-blue-500 text-white py-6 shadow-md">
+        <h1 class="text-2xl font-bold text-center">Razas de Perritos 🐶</h1>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4">
+		<div class="mb-6 text-center">
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="w-full max-w-lg p-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="Buscar raza de perrito..." 
+                oninput="filterBreeds()"
+            >
         </div>
-        <div id="dataContainer"></div>
-        <script src = "../js/apiDog.js" ></script>
+        <div id="dataContainer" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </main>
 
-    </body>
+    <footer class="text-center py-4 text-gray-500 text-sm">
+        Datos obtenidos de The Dog API
+    </footer>
+
+    <script src="../js/apiDog.js"></script>
+</body>
 </html>
