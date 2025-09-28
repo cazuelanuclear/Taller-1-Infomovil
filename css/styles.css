@@ -1,19 +1,15 @@
 .grid {
-  background-color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
-  gap: 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: start;
-  align-items: center;
-}
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-items: center;
+      align-items: start;
+    }
 
-@media (min-width: 768px) and (max-width: 1280px) {  
+@media (min-width: 768px) and (max-width: 1024px) {  
   .grid {
     background-color: lightblue;
-    grid-template-columns: 1fr 1fr;
+    /* aquí se respeta auto-fit, ya no fuerzas columnas fijas */
   }
 }
 
@@ -21,6 +17,6 @@
   .grid {
     font-size: 14px;
     background-color: pink;
-    grid-template-columns: 1fr ;
+    /* lo mismo: auto-fit se encarga */
   }
 }
