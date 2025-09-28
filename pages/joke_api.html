@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang = "es"> 
-    <head>
-        <title> Chistes </title>
-        <meta charset="UTF-8">
-        <link href="../css/apis.css" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Chistes</title>
+		<link href="../css/apis.css" rel="stylesheet">
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-chistes min-h-screen flex flex-col items-center py-6 px-3">
+	
+		<h2 class="page-title">😂 Chiste del día</h2>
 
-    <body>
-        <button id='refreshBtn' class="px-4 py-2 bg-gray-100 text-gray-800 rounded border border-gray-300 hover:bg-gray-200 transition-colors duration-200 m-3"> Presiona aquí para un nuevo chiste! </button>
-        <h2 class="px-4">Chiste muy gracioso:</h2> 
-        <div id="dataContainer"></div>
-        <script src = "../js/apiJoke.js" ></script>
-    </body>
+		<button id="refreshBtn" class="btn-primary">🔄 Nueva Frase</button>
+
+		<div id="dataContainer" class="data-container"></div>
+
+		<script src="../js/apiJoke.js"></script>
+	</body>
 </html>
